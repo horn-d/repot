@@ -15,3 +15,11 @@
 .elementor-background-overlay {
 opacity: 0.6 !important;
 }
+.eael-timeline-bullet {
+background: #c0b8a8 !important;
+}
+
+#wpforms-3722 {
+animation-duration: 2s;
+animation-name: scale-up-center; }
+
