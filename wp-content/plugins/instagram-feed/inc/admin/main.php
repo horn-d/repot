@@ -3198,13 +3198,13 @@ endif;
 $error_page = $sb_instagram_posts_manager->get_error_page();
 if ( $error_page ) {
 	echo 'Feed with error: ' . esc_url( get_the_permalink( $error_page ) ). "\n";
-}
-$ajax_statuses = $sb_instagram_posts_manager->get_ajax_status();
-if ( ! $ajax_statuses['successful'] ) {
-	?>
-## AJAX Status ##
-	<?php
-	echo 'test not successful';
+}?>
+
+## oEmbed: ##
+<?php
+$oembed_token_settings = get_option( 'sbi_oembed_token', array() );
+foreach( $oembed_token_settings as $key => $value ) {
+    echo $key . ': ' . esc_attr( $value ) . "\n";
 }
 ?>
 </textarea>

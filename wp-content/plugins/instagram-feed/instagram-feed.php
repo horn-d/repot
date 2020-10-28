@@ -3,7 +3,7 @@
 Plugin Name: Smash Balloon Instagram Feed
 Plugin URI: https://smashballoon.com/instagram-feed
 Description: Display beautifully clean, customizable, and responsive Instagram feeds.
-Version: 2.5.2
+Version: 2.5.3
 Author: Smash Balloon
 Author URI: https://smashballoon.com/
 License: GPLv2 or later
@@ -23,7 +23,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 if ( ! defined( 'SBIVER' ) ) {
-	define( 'SBIVER', '2.5.2' );
+	define( 'SBIVER', '2.5.3' );
 }
 // Db version.
 if ( ! defined( 'SBI_DBVERSION' ) ) {
@@ -103,6 +103,7 @@ if ( function_exists( 'sb_instagram_feed_init' ) ) {
 		require_once trailingslashit( SBI_PLUGIN_DIR ) . 'inc/class-sb-instagram-post-set.php';
 		require_once trailingslashit( SBI_PLUGIN_DIR ) . 'inc/class-sb-instagram-posts-manager.php';
 		require_once trailingslashit( SBI_PLUGIN_DIR ) . 'inc/class-sb-instagram-settings.php';
+		require_once trailingslashit( SBI_PLUGIN_DIR ) . 'inc/class-sb-instagram-single.php';
 		require_once trailingslashit( SBI_PLUGIN_DIR ) . 'inc/class-sb-instagram-token-refresher.php';
 		require_once trailingslashit( SBI_PLUGIN_DIR ) . 'inc/admin/blocks/class-sbi-blocks.php';
 		require_once trailingslashit( SBI_PLUGIN_DIR ) . 'inc/admin/class-sbi-tracking.php';
@@ -633,6 +634,8 @@ if ( function_exists( 'sb_instagram_feed_init' ) ) {
 		delete_option( 'sbi_oembed_token' );
 		delete_option( 'sbi_rating_notice' );
 		delete_option( 'sbi_refresh_report' );
+		delete_option( 'sbi_single_cache' );
+
 
 		global $wp_roles;
 		$wp_roles->remove_cap( 'administrator', 'manage_instagram_feed_options' );
